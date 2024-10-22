@@ -19,18 +19,31 @@ class Vehicle {
     brand;
     year;
     color;
-    door;
+    doors;
     fuel;
 
-    constructor(brand, year,color,door,fuel){
+    constructor(brand,year,color,doors,fuel){
         this.brand = brand
         this.year = year
         this.color = color
-        this.door = door
+        this.doors = doors
         this.fuel = fuel
+    }
+
+    getInfo(){
+        return `${this.brand} ${this.year} ${this.color}`
+    }
+
+    getYear(){
+        const currentYear = new Date().getFullYear()
+        return currentYear - this.year
     }
 
 }
 
 const fiat = new Vehicle ('Fiat', 2009, 'blue')
 console.log(fiat);
+console.log(fiat.getInfo());
+console.log(fiat.getYear());
+
+
