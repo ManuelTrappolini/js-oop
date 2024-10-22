@@ -22,7 +22,7 @@ class Vehicle {
     doors;
     fuel;
 
-    constructor(brand,year,color,doors,fuel){
+    constructor(brand, year, color, doors, fuel) {
         this.brand = brand
         this.year = year
         this.color = color
@@ -30,11 +30,11 @@ class Vehicle {
         this.fuel = fuel
     }
 
-    getInfo(){
+    getInfo() {
         return `${this.brand} ${this.year} ${this.color}`
     }
 
-    getYear(){
+    getYear() {
         const currentYear = new Date().getFullYear()
         let age = currentYear - this.year
         return `This ${this.brand} has ${age} year`
@@ -42,29 +42,29 @@ class Vehicle {
 
 }
 
-const fiat = new Vehicle ('Fiat', 2009, 'blue','3 doors','diesel')
+const fiat = new Vehicle('Fiat', 2009, 'blue', '3 doors', 'diesel')
 console.log(fiat);
 console.log(fiat.getInfo());
 console.log(fiat.getYear());
 
 
 const cars = [
-    new Vehicle ('Fiat', 2009, 'blue','3 doors','diesel'),
-    new Vehicle ('Opel', 2020, 'black', '4 doors','petrol')
+    new Vehicle('Fiat', 2009, 'blue', '3 doors', 'diesel'),
+    new Vehicle('Opel', 2020, 'black', '4 doors', 'petrol')
 ]
 
-const carsEl= document.querySelector('.cars')
+const carsEl = document.querySelector('.cars')
 
-cars.forEach(car=>{
-console.log(car.doors, car.fuel);
-const markup = `
-<div class="car">
+cars.forEach(car => {
+    console.log(car.doors, car.fuel);
+    const markup = `
+        <div class="car">
             <h3>${car.brand}</h3>
             <p>${car.doors}</p>
             <p>${car.fuel}</p>
         </div>
         `
-        carsEl.innerHTML += markup
+    carsEl.innerHTML += markup
 })
 
 
