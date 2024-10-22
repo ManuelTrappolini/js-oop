@@ -50,10 +50,39 @@ console.log(fiat.getYear());
 
 const cars = [
     new Vehicle ('Fiat', 2009, 'blue','3 doors','diesel'),
-    new Vehicle ('Opel', 2020, 'nera', '4 doors','petrol')
+    new Vehicle ('Opel', 2020, 'black', '4 doors','petrol')
 ]
+
+const carsEl= document.querySelector('.cars')
 
 cars.forEach(car=>{
 console.log(car.doors, car.fuel);
+const markup = `
+<div class="car">
+            <h3>${car.brand}</h3>
+            <p>${car.doors}</p>
+            <p>${car.fuel}</p>
+        </div>
+        `
+        carsEl.innerHTML += markup
 })
 
+
+
+
+
+//add filter and find method
+
+/* cars.filter(car =>{
+    if(car.color === 'black'){
+        console.log(car);
+        
+    }
+})
+
+cars.find(car =>{
+    if(car.fuel === 'diesel'){
+        console.log(car);
+        
+    }
+}) */
