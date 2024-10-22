@@ -36,14 +36,24 @@ class Vehicle {
 
     getYear(){
         const currentYear = new Date().getFullYear()
-        return currentYear - this.year
+        let age = currentYear - this.year
+        return `This ${this.brand} has ${age} year`
     }
 
 }
 
-const fiat = new Vehicle ('Fiat', 2009, 'blue')
+const fiat = new Vehicle ('Fiat', 2009, 'blue','3 doors','diesel')
 console.log(fiat);
 console.log(fiat.getInfo());
 console.log(fiat.getYear());
 
+
+const cars = [
+    new Vehicle ('Fiat', 2009, 'blue','3 doors','diesel'),
+    new Vehicle ('Opel', 2020, 'nera', '4 doors','petrol')
+]
+
+cars.forEach(car=>{
+console.log(car.doors, car.fuel);
+})
 
